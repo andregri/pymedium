@@ -40,6 +40,17 @@ class TestMediumValidToken(unittest.TestCase):
         except Exception as e:
             self.fail("Unexpected exception:" + str(e))
 
+    def test_get_contibutors(self):
+        """
+        Test that the GET request
+        GET https://api.medium.com/v1/publications/{{publicationId}}/contributors
+        does not raise any exception
+        """
+        try:
+            self.client.get_contributors("0")
+        except Exception as e:
+            self.fail("Unexepcted exception: " + str(e))
+
 
 if __name__ == '__main__':
     unittest.main()
