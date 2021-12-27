@@ -60,3 +60,37 @@ class Client:
             return response['data']
         else:
             raise RuntimeError(response['errors'][0]['message'])
+
+
+    def create_post(self, title, content_format, content,
+        tags=[], canonical_url='', publish_status='public',
+        license='all-rights-reserved', notify_followers='false'):
+        """
+        POST https://api.medium.com/v1/users/{{authorId}}/posts
+        """
+        header = {
+            'Authorization': 'Bearer ' + self.token,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Accept-Charset': 'utf-8'
+        }
+        data = {
+            'title': title,
+            'contentFormat': content_format,
+            'content': content,
+            'tags': tags,
+            'canonicalUrl': canonical_url,
+            'publishStatus': publish_status,
+            'license': license,
+            'notifyFollowers': notify_followers
+        }
+        
+        r = requests.post('https://api.medium.com/v1/users/' + self.user_id + '/posts',
+            headers=header, json=data)
+
+        response = r.json()
+
+        if r.status_code == 201:
+            return response['data']
+        else:
+            raise RuntimeError(str(r.status_code) + ": " + response['errors'][0]['message'])
