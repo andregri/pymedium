@@ -1,6 +1,7 @@
 import unittest
 import medium
 import os
+import random
 
 
 class TestMediumValidToken(unittest.TestCase):
@@ -43,13 +44,33 @@ class TestMediumValidToken(unittest.TestCase):
     def test_get_contibutors(self):
         """
         Test that the GET request
-        GET https://api.medium.com/v1/publications/{{publicationId}}/contributors
+        https://api.medium.com/v1/publications/{{publicationId}}/contributors
         does not raise any exception
         """
         try:
             self.client.get_contributors("0")
         except Exception as e:
             self.fail("Unexepcted exception: " + str(e))
+
+    
+    def test_create_post(self):
+        """
+        Test that the POST request
+        https://api.medium.com/v1/users/{{authorId}}/posts does not raise
+        any exception
+        """
+        with open('README.md') as f:
+            lines = f.readlines()
+            content = ''.join(lines)
+
+            try:
+                self.client.create_post(
+                    title='Title' + str(random.randint(0, 100)),
+                    content_format='markdown',
+                    content=content
+                )
+            except Exception as e:
+                self.fail('Unexpected exception: ' + str(e))
 
 
 if __name__ == '__main__':
