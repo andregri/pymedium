@@ -28,4 +28,4 @@ jobs:
       - name: Test
         env:
           MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
-        run: pytest test.py
+        run: pytest
