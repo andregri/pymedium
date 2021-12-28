@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pymediumapi",
-    version="0.0.1",
+    version="0.0.2",
     author="Andrea Grillo",
     author_email="andrea.grillo96@live.com",
     description="A python package to interact with Medium API",
@@ -15,6 +15,9 @@ setuptools.setup(
     project_urls={
         "Bug Tracker": "https://github.com/andregri/pymediumapi/issues",
     },
+    install_requires = [
+        "requests==2.26.0",
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
