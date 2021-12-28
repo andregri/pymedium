@@ -1,4 +1,4 @@
-# pymedium
+# pymediumapi
 
 <div id="top"></div>
 <!--
@@ -57,7 +57,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-**pymedium** is a Python3 package to interact with the [API of Medium](https://github.com/Medium/medium-api-docs)
+**pymediumapi** is a Python3 package to interact with the [API of Medium](https://github.com/Medium/medium-api-docs)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -78,7 +78,7 @@ Make sure to have `python3`, `pip` installed.
 1. Get a free **Integration token** at [https://medium.com/](https://medium.com/) and create an enviroment variable `export MEDIUM_INTEGRATION_TOKEN=<your token>`
 2. Clone the repo
    ```sh
-   git clone https://github.com/andregri/pymedium.git
+   git clone https://github.com/andregri/pymediumapi.git
    ```
 3. Create a virtual environment and install requirements
    ```sh
@@ -97,11 +97,11 @@ Example to authenticate and get a list of pubblications you subscribed:
 
 ```python
 import os
-import pymedium_andregri as medium
+import pymediumapi
 
 
 def main():
-    client = medium.Client(os.environ.get('MEDIUM_INTEGRATION_TOKEN'))
+    client = pymediumapi.Client(os.environ.get('MEDIUM_INTEGRATION_TOKEN'))
     
     try:
         client.authenticate()
@@ -144,7 +144,7 @@ if __name__ == "__main__":
 - [] Upload images
 - [] Upload the package
 
-See the [open issues](https://github.com/andregri/pymedium/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/andregri/pymediumapi/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -182,7 +182,7 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 
 Andrea Grillo - [@AndreaGrillo96](https://twitter.com/AndreaGrillo96)
 
-Project Link: [https://github.com/andregri/pymedium](https://github.com/andregri/pymedium)
+Project Link: [https://github.com/andregri/pymediumapi](https://github.com/andregri/pymediumapi)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -199,13 +199,13 @@ Project Link: [https://github.com/andregri/pymedium](https://github.com/andregri
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/andregri/pymedium.svg?style=for-the-badge
-[contributors-url]: https://github.com/andregri/pymedium/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/andregri/pymedium.svg?style=for-the-badge
-[forks-url]: https://github.com/andregri/pymedium/network/members
-[stars-shield]: https://img.shields.io/github/stars/andregri/pymedium.svg?style=for-the-badge
-[stars-url]: https://github.com/andregri/pymedium/stargazers
-[issues-shield]: https://img.shields.io/github/issues/andregri/pymedium.svg?style=for-the-badge
-[issues-url]: https://github.com/andregri/pymedium/issues
-[license-shield]: https://img.shields.io/github/license/andregri/pymedium.svg?style=for-the-badge
-[license-url]: https://github.com/andregri/pymedium/blob/master/LICENSE.md
+[contributors-shield]: https://img.shields.io/github/contributors/andregri/pymediumapi.svg?style=for-the-badge
+[contributors-url]: https://github.com/andregri/pymediumapi/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/andregri/pymediumapi.svg?style=for-the-badge
+[forks-url]: https://github.com/andregri/pymediumapi/network/members
+[stars-shield]: https://img.shields.io/github/stars/andregri/pymediumapi.svg?style=for-the-badge
+[stars-url]: https://github.com/andregri/pymediumapi/stargazers
+[issues-shield]: https://img.shields.io/github/issues/andregri/pymediumapi.svg?style=for-the-badge
+[issues-url]: https://github.com/andregri/pymediumapi/issues
+[license-shield]: https://img.shields.io/github/license/andregri/pymediumapi.svg?style=for-the-badge
+[license-url]: https://github.com/andregri/pymediumapi/blob/master/LICENSE.md

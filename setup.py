@@ -4,16 +4,16 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pymedium-andregri",
+    name="pymediumapi",
     version="0.0.1",
     author="Andrea Grillo",
     author_email="andrea.grillo96@live.com",
-    description="A python package to interact with Medium",
+    description="A python package to interact with Medium API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/andregri/pymedium",
+    url="https://github.com/andregri/pymediumapi",
     project_urls={
-        "Bug Tracker": "https://github.com/andregri/pymedium/issues",
+        "Bug Tracker": "https://github.com/andregri/pymediumapi/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",

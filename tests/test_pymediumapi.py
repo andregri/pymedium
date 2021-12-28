@@ -1,5 +1,5 @@
 import unittest
-import medium
+import pymediumapi
 import os
 import random
 
@@ -9,12 +9,12 @@ class TestMediumValidToken(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.token = os.environ.get('MEDIUM_INTEGRATION_TOKEN')
-        cls.client = medium.Client(cls.token)
+        cls.client = pymediumapi.Client(cls.token)
         return super().setUpClass()
 
 
     def test_invalid_token(self):
-        c = medium.Client('')
+        c = pymediumapi.Client('')
         self.assertRaises(RuntimeError, c.authenticate)
         self.assertRaises(RuntimeError, c.get_pubblications)
 
