@@ -85,6 +85,8 @@ Make sure to have `python3`, `pip` installed.
    python3 -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
+   pip install -e .
+   python3 -m tox run -e py310
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
