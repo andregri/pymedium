@@ -102,7 +102,7 @@ import pymediumapi
 
 def main():
     client = pymediumapi.Client(os.environ.get('MEDIUM_INTEGRATION_TOKEN'))
-    
+
     try:
         client.authenticate()
     except Exception as e:
@@ -117,7 +117,7 @@ def main():
 
     if pubblications:
         pub_id = pubblications[0]["id"]
-        
+
         try:
             contributors = client.get_contributors(pub_id)
         except Exception as e:

@@ -15,7 +15,7 @@ setuptools.setup(
     project_urls={
         "Bug Tracker": "https://github.com/andregri/pymediumapi/issues",
     },
-    install_requires = [
+    install_requires=[
         "requests==2.26.0",
     ],
     classifiers=[
