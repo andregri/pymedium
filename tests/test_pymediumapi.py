@@ -2,6 +2,7 @@ import unittest
 import pymediumapi
 import os
 import random
+import responses
 
 
 class TestMediumValidToken(unittest.TestCase):
@@ -16,13 +17,33 @@ class TestMediumValidToken(unittest.TestCase):
         self.assertRaises(RuntimeError, c.authenticate)
         self.assertRaises(RuntimeError, c.get_pubblications)
 
+    @responses.activate
     def test_authentication(self):
         """
         Test that the GET request https://api.medium.com/v1/me does not raise
         any exception if the token is valid
         """
+        responses.add(
+            responses.GET,
+            "https://api.medium.com/v1/me",
+            json={
+                "data": {
+                    "id": "a",
+                    "username": "b",
+                    "name": "c",
+                    "url": "d",
+                    "imageUrl": "e",
+                }
+            },
+            status=200,
+        )
         try:
-            self.client.authenticate()
+            resp = self.client.authenticate()
+            self.assertTrue("id" in resp)
+            self.assertTrue("username" in resp)
+            self.assertTrue("name" in resp)
+            self.assertTrue("url" in resp)
+            self.assertTrue("imageUrl" in resp)
         except Exception as e:
             self.fail("Unexpected exception:" + str(e))
 
